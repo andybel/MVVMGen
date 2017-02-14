@@ -18,7 +18,7 @@ class <%= @name %>Coordinator: Coordinator {
         self.parentViewController = parentViewController
     }
     
-    func start()
+    func setupWithData(data: Any?) {
     {
         
         let storyboard = UIStoryboard(name: "<%= @name %>Storyboard", bundle: nil)
@@ -41,7 +41,7 @@ class <%= @name %>Coordinator: Coordinator {
 
 extension <%= @name %>Coordinator: <%= @name %>ViewModelCoordinatorDelegate {
     
-    func viewModelDidSelectData(item: Any?) {
+    func viewModelDidSelectData(data: Any?) {
         // handle onward process here with type cast (if required)
     }
     

@@ -6,6 +6,9 @@
 //  Copyright © <%= Time.now.strftime("%Y") %> <%= @companyName %>. All rights reserved.
 //
 
+// TODO: Create a DataItem for this Module OR delete
+typealias <%= @name %>DataItem = Any?
+
 class <%= @name %>ViewModel: <%= @name %>ViewModelDelegate {
   
   var model: [<%= @name %>DataItem]? {

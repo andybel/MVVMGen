@@ -18,7 +18,7 @@ protocol <%= @name %>ViewModelCoordinatorDelegate: class {
 }
 
 protocol <%= @name %>ViewModelDelegate {
-    
+
     var model: [<%= @name %>DataItem]? { get set }
     var viewDelegate: <%= @name %>ViewModelViewDelegate? { get set }
     var coordinatorDelegate: <%= @name %>ViewModelCoordinatorDelegate? { get set}
