@@ -16,20 +16,20 @@ class MVVMGen
       filecomps = template.split(".")
       filename = "#{@name}#{filecomps[0]}.#{filecomps[2]}"
 
-      generatedPage = self.render(template)
+      generatedPage = self.render("Templates/#{template}")
 
       filegen = File.open(filename, "w+") do |fh|
         fh << generatedPage
       end
       FileUtils.move(filegen, @output_path)
 
-      puts "WE GENERATED #{filename}: "##{generatedPage}"
+      puts "WE GENERATED #{filename}: #{generatedPage}"
 
     end
 
     def createDir
 
-        dirPath = "../#{@name}"
+        dirPath = "../Output/#{@name}"
         @output_path = File.expand_path(dirPath, __FILE__)
         unless File.directory?(@output_path)
           Dir.mkdir(@output_path)
