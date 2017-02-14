@@ -11,11 +11,11 @@ import UIKit
 class <%= @name %>Coordinator: Coordinator {
     
     var <%= @name %>ViewController:<%= @name %>ViewController?
-    var window: UIWindow
+    var parentViewController: UIViewController?
     
-    init(window: UIWindow)
+    init(parentViewController: UIViewController?)
     {
-        self.window = window
+        self.parentViewController = parentViewController
     }
     
     func start()
@@ -30,8 +30,10 @@ class <%= @name %>Coordinator: Coordinator {
         viewModel.coordinatorDelegate = self
         <%= @name %>ViewController.viewModel = viewModel
         
-        // appropriate navigation here...
-        window.rootViewController = <%= @name %>ViewController
+        // appropriate navigation here. E.g....
+//        if let parentNC = parentViewController.navigationController {
+//            parentNC.pushViewController(<%= @name %>ViewController, animated: true)
+//        }
     
     }
     
@@ -40,7 +42,7 @@ class <%= @name %>Coordinator: Coordinator {
 extension <%= @name %>Coordinator: <%= @name %>ViewModelCoordinatorDelegate {
     
     func viewModelDidSelectData(item: Any?) {
-        // handle onward process here
+        // handle onward process here with type cast (if required)
     }
     
 }

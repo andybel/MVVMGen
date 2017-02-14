@@ -23,7 +23,7 @@ class MVVMGen
       end
       FileUtils.move(filegen, @output_path)
 
-      puts "WE GENERATED #{filename}: #{generatedPage}"
+      puts "WE GENERATED #{filename}"#: #{generatedPage}"
 
     end
 
