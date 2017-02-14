@@ -1,0 +1,29 @@
+//
+//  <%= @name %>Protocols.swift
+//  <%= @xcodeModuleName %>
+//
+//  Created by Andy Bell on <%= Time.now.strftime("%m/%d/%Y") %>.
+//  Copyright © <%= Time.now.strftime("%Y") %> <%= @companyName %>. All rights reserved.
+//
+
+import Foundation
+
+protocol <%= @name %>ViewModelViewDelegate: class
+{
+    func modelDidChange(viewModel: <%= @name %>ViewModelDelegate)
+}
+
+protocol <%= @name %>ViewModelCoordinatorDelegate: class {
+    func viewModelDidSelectData(data: Any?)
+}
+
+protocol <%= @name %>ViewModelDelegate {
+    
+    var model: [<%= @name %>DataItem]? { get set }
+    var viewDelegate: <%= @name %>ViewModelViewDelegate? { get set }
+    var coordinatorDelegate: <%= @name %>ViewModelCoordinatorDelegate? { get set}
+    var title: String { get }
+    
+    // func declarations here...
+    
+}
