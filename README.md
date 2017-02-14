@@ -7,8 +7,11 @@ Usage:
 - Run the program b ypassing in the name of your MMVVM module(s)
 
 e.g.
+
 $ ruby MVVMGen.rb "Hello"
+
 $ ruby MVVMGen.rb "LocationsList" "LocationDetail" "LocationMap"
+
 
 This will generate a new directory for your module containing the following files:
 
