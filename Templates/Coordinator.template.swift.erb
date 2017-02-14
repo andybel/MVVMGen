@@ -10,7 +10,7 @@ import UIKit
 
 class <%= @name %>Coordinator: Coordinator {
     
-    var <%= @name %>ViewController:<%= @name %>ViewController?
+    var <%= @nameDecapitalized %>ViewController:<%= @name %>ViewController?
     var parentViewController: UIViewController?
     
     init(parentViewController: UIViewController?)
@@ -22,9 +22,9 @@ class <%= @name %>Coordinator: Coordinator {
     {
         
         let storyboard = UIStoryboard(name: "<%= @name %>Storyboard", bundle: nil)
-        <%= @name %>ViewController = storyboard.instantiateViewController(withIdentifier: "<%= @name %>ViewController") as? <%= @name %>ViewController
+        <%= @nameDecapitalized %>ViewController = storyboard.instantiateViewController(withIdentifier: "<%= @name %>ViewController") as? <%= @name %>ViewController
         
-        guard let <%= @name %>ViewController = <%= @name %>ViewController else { return }
+        guard let <%= @nameDecapitalized %>ViewController = <%= @name %>ViewController else { return }
         
         let viewModel =  <%= @name %>ViewModel()
         viewModel.coordinatorDelegate = self
