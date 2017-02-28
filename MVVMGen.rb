@@ -18,10 +18,10 @@ class MVVMGen
 
       generatedPage = self.render("Templates/#{template}")
 
-      # filegen = File.open(filename, "w+") do |fh|
-      #   fh << generatedPage
-      # end
-      # FileUtils.move(filegen, @output_path)
+      filegen = File.open(filename, "w+") do |fh|
+        fh << generatedPage
+      end
+      FileUtils.move(filegen, @output_path)
 
       puts "WE GENERATED #{filename}:"
       puts "#{generatedPage}"
@@ -42,14 +42,14 @@ class MVVMGen
 
       @name = File.basename(modulename).split(".")[0]
       @nameDecapitalized = @name.slice(0).downcase + @name[1..(@name.length)]
-      @xcodeModuleName = "Moya_MVVM"
-      @companyName = "Snapp Mobile Germany GmbH"
+      @xcodeModuleName = "salesfive"
+      @companyName = "Salesfive Gmbh"
 
-      # createDir()
-      # generateFromTemplate("ViewModel.template.swift.erb")
-      # generateFromTemplate("ViewController.template.swift.erb")
-      # generateFromTemplate("Storyboard.template.storyboard.erb")
-      # generateFromTemplate("Protocols.template.swift.erb")
+      createDir()
+      generateFromTemplate("ViewModel.template.swift.erb")
+      generateFromTemplate("ViewController.template.swift.erb")
+      generateFromTemplate("Storyboard.template.storyboard.erb")
+      generateFromTemplate("Protocols.template.swift.erb")
       generateFromTemplate("Coordinator.template.swift.erb")
 
   end

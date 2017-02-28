@@ -9,10 +9,10 @@
 import UIKit
 
 class <%= @name %>ViewController: UIViewController {
-    
+
     // IBOutlets here
 
-    var viewModel: <%= @name %>ViewModel? {
+    var viewModel: <%= @name %>ViewModelDelegate? {
         willSet {
             viewModel?.viewDelegate = nil
         }
@@ -21,7 +21,7 @@ class <%= @name %>ViewController: UIViewController {
             refreshDisplay()
         }
     }
-    
+
     fileprivate var isLoaded: Bool = false
 
     override func viewDidLoad()
@@ -40,7 +40,7 @@ class <%= @name %>ViewController: UIViewController {
             // or set default UI
         }
     }
-    
+
 }
 
 extension <%= @name %>ViewController: <%= @name %>ViewModelViewDelegate

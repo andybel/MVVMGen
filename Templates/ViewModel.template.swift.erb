@@ -10,7 +10,7 @@
 typealias <%= @name %>DataItem = Any?
 
 class <%= @name %>ViewModel: <%= @name %>ViewModelDelegate {
-  
+
   var model: [<%= @name %>DataItem]? {
       didSet {
           viewDelegate?.modelDidChange(viewModel: self)

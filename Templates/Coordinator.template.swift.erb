@@ -9,40 +9,38 @@
 import UIKit
 
 class <%= @name %>Coordinator: Coordinator {
-    
-    var <%= @nameDecapitalized %>ViewController:<%= @name %>ViewController?
+
+    var <%= @nameDecapitalized %>ViewController: <%= @name %>ViewController?
     var parentViewController: UIViewController?
-    
-    init(parentViewController: UIViewController?)
-    {
+
+    init(parentViewController: UIViewController?) {
         self.parentViewController = parentViewController
     }
-    
+
     func setupWithData(data: Any?) {
-    {
-        
+
         let storyboard = UIStoryboard(name: "<%= @name %>Storyboard", bundle: nil)
         <%= @nameDecapitalized %>ViewController = storyboard.instantiateViewController(withIdentifier: "<%= @name %>ViewController") as? <%= @name %>ViewController
-        
-        guard let <%= @nameDecapitalized %>ViewController = <%= @name %>ViewController else { return }
-        
+
+        guard let <%= @nameDecapitalized %>ViewController = <%= @nameDecapitalized %>ViewController else { return }
+
         let viewModel =  <%= @name %>ViewModel()
         viewModel.coordinatorDelegate = self
-        <%= @name %>ViewController.viewModel = viewModel
-        
+        <%= @nameDecapitalized %>ViewController.viewModel = viewModel
+
         // appropriate navigation here. E.g....
-//        if let parentNC = parentViewController.navigationController {
-//            parentNC.pushViewController(<%= @name %>ViewController, animated: true)
+//        if let parentNC = parentViewController?.navigationController {
+//            parentNC.pushViewController(<%= @nameDecapitalized %>ViewController, animated: true)
 //        }
-    
+
     }
-    
+
 }
 
 extension <%= @name %>Coordinator: <%= @name %>ViewModelCoordinatorDelegate {
-    
+
     func viewModelDidSelectData(data: Any?) {
         // handle onward process here with type cast (if required)
     }
-    
+
 }
