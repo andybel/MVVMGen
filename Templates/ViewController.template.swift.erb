@@ -34,7 +34,7 @@ class <%= @name %>ViewController: UIViewController {
     fileprivate func refreshDisplay()
     {
         guard isLoaded else { return }
-        if let viewModel = viewModel {
+        if viewModel != nil {
             // set UI from vieModel here
         } else {
             // or set default UI
@@ -43,10 +43,11 @@ class <%= @name %>ViewController: UIViewController {
 
 }
 
-extension <%= @name %>ViewController: <%= @name %>ViewModelViewDelegate
-{
+extension <%= @name %>ViewController: <%= @name %>ViewModelViewDelegate {
+
     func modelDidChange(viewModel: <%= @name %>ViewModelDelegate)
     {
         refreshDisplay()
     }
+
 }

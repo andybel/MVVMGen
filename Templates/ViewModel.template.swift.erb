@@ -11,12 +11,12 @@ typealias <%= @name %>DataItem = Any?
 
 class <%= @name %>ViewModel: <%= @name %>ViewModelDelegate {
 
-  var model: [<%= @name %>DataItem]? {
-      didSet {
-          viewDelegate?.modelDidChange(viewModel: self)
-      }
-  }
-  weak var viewDelegate: <%= @name %>ViewModelViewDelegate?
-  weak var coordinatorDelegate: <%= @name %>ViewModelCoordinatorDelegate?
+	var model: [<%= @name %>DataItem]? {
+	  didSet {
+	      viewDelegate?.modelDidChange(viewModel: self)
+	  }
+	}
+	weak var viewDelegate: <%= @name %>ViewModelViewDelegate?
+	weak var coordinatorDelegate: <%= @name %>ViewModelCoordinatorDelegate?
 
 }
