@@ -51,6 +51,7 @@ class MVVMGen
       generateFromTemplate("Storyboard.template.storyboard.erb")
       generateFromTemplate("Protocols.template.swift.erb")
       generateFromTemplate("Coordinator.template.swift.erb")
+      generateFromTemplate("InteractorDefault.template.swift.erb")
 
   end
 

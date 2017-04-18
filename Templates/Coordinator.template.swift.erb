@@ -28,10 +28,12 @@ class <%= @name %>Coordinator: Coordinator {
         viewModel.coordinatorDelegate = self
         <%= @nameDecapitalized %>ViewController.viewModel = viewModel
 
-        // appropriate navigation here. E.g....
-//        if let parentNC = parentViewController?.navigationController {
-//            parentNC.pushViewController(<%= @nameDecapitalized %>ViewController, animated: true)
+//        // If this module uses Interactor for Network calls
+//        guard let networkService = Api.make() else {
+//           print("[Error] Unable to create networkService.")
+//            return
 //        }
+//        viewModel.interactor = <%= @name %>InteractorDefault(networkService: networkService)
 
     }
 
